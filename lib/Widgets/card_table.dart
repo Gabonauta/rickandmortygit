@@ -1,39 +1,76 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class CardTable extends StatelessWidget {
-  const CardTable({Key? key}) : super(key: key);
+import '../Services/services.dart';
+
+class CardTable extends StatefulWidget {
+  const CardTable({Key? key, required this.onNextPage}) : super(key: key);
+  final Function onNextPage;
+
+  @override
+  State<CardTable> createState() => _CardTableState();
+}
+
+class _CardTableState extends State<CardTable> {
+  final ScrollController scrollController = ScrollController();
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels >=
+          (scrollController.position.maxScrollExtent - 200)) {
+        //Todo next page
+
+        widget.onNextPage();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    var color = Color(0xff146356);
-    return Table(
-      children: [
-        TableRow(children: [
-          _SigleCard(
-            color: color,
-            image: Image.asset("assets/images/not_found.jpg"),
-            text: 'Unknown Rick',
-            description: "Dead",
-            species: "Human",
-          ),
-          //species: "Human"
-          _SigleCard(
-            color: color,
-            image: Image.asset("assets/images/not_found.jpg"),
-            text: 'Unknown Rick',
-            description: "Dead",
-            species: "Humanoid",
-          ),
-        ]),
-      ],
+    final charactersService = Provider.of<CharactersService>(context);
+    var color = const Color(0xff146356);
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: GridView.builder(
+        controller: scrollController,
+        itemCount: charactersService.charactersMap.length,
+        itemBuilder: (context, index) {
+          //Color state
+          if (charactersService.charactersMap[index].status == "Dead") {
+            color = Colors.red;
+          } else if (charactersService.charactersMap[index].status == "Alive") {
+            color = Colors.green;
+          } else {
+            color = Colors.grey;
+          }
+          //end color state
+          return GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "character");
+            },
+            child: _SigleCard(
+                image: charactersService.charactersMap[index].image,
+                color: color,
+                text: charactersService.charactersMap[index].name,
+                description: charactersService.charactersMap[index].status,
+                species: charactersService.charactersMap[index].species),
+          );
+        },
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+      ),
     );
   }
 }
 
 class _SigleCard extends StatelessWidget {
-  final Image image;
+  final String image;
   final Color color;
   final String text;
   final String description;
@@ -55,36 +92,45 @@ class _SigleCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 0.33,
-          height: 100,
-          decoration: BoxDecoration(color: Color(0xff146356)),
+          width: MediaQuery.of(context).size.width * 0.4,
+          height: MediaQuery.of(context).size.height * 0.15,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image:
+                DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
+          ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Text(
-          this.text,
-          style: TextStyle(color: this.color, fontSize: 18),
+          text,
+          style: const TextStyle(fontSize: 18),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              this.description,
-              style: TextStyle(color: this.color, fontSize: 18),
+            Icon(
+              Icons.circle,
+              color: color,
             ),
             const SizedBox(width: 5),
             Text(
+              description,
+              style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(width: 5),
+            const Text(
               "-",
-              style: TextStyle(color: this.color, fontSize: 18),
+              style: TextStyle(fontSize: 18),
             ),
             const SizedBox(width: 5),
             Text(
-              this.species,
-              style: TextStyle(color: this.color, fontSize: 18),
+              species,
+              style: const TextStyle(fontSize: 18),
             ),
           ],
         )
@@ -100,19 +146,10 @@ class _BackgroundCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      child: ClipRRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: Container(
-            height: 180,
-            decoration: BoxDecoration(
-                color: Color(0xffFFF1BD),
-                borderRadius: BorderRadius.circular(20)),
-            child: this.widget,
-          ),
-        ),
-      ),
+      decoration: BoxDecoration(
+          color: const Color(0xffFFF1BD),
+          borderRadius: BorderRadius.circular(20)),
+      child: widget,
     );
   }
 }

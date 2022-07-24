@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rickandmortyapp/Widgets/widgets.dart';
 
-class CharacterScreen extends StatelessWidget {
-  const CharacterScreen({Key? key}) : super(key: key);
+class LoadingScreen extends StatelessWidget {
+  const LoadingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,13 @@ class CharacterScreen extends StatelessWidget {
           // style: TextStyle(color: Color(0xffFFF1BD)),
         ),
       ),
-      body: const Center(
-        child: Text('Hola Mundo'),
+      body: Stack(
+        children: const [
+          Background(),
+          Center(
+            child: CircularProgressIndicator(color: Color(0xffFFF1BD)),
+          ),
+        ],
       ),
     );
   }

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rickandmortyapp/Screens/character_screen.dart';
 import 'package:rickandmortyapp/Screens/home_screen.dart';
-
-import 'Servicios/services.dart';
+import 'Services/services.dart';
 
 void main() => runApp(const AppState());
 
@@ -30,8 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       routes: {
-        'home': (_) => HomeScreen(),
-        'character': (_) => CharacterScreen()
+        'home': (_) => const HomeScreen(),
+        'character': (_) => const CharacterScreen(),
       },
       initialRoute: 'home',
     );

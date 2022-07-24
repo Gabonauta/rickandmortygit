@@ -5,7 +5,6 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   List<Widget>? buildActions(BuildContext context) {
-    // TODO: implement buildActions
     IconButton(
         onPressed: () {
           if (query.isEmpty) {
@@ -14,13 +13,14 @@ class CustomSearchDelegate extends SearchDelegate {
           query = '';
         },
         icon: const Icon(Icons.clear));
+    return null;
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
     IconButton(
         onPressed: () => close(context, null), icon: const Icon(Icons.clear));
+    return null;
   }
 
   @override
@@ -30,7 +30,6 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
     List<String> charactersSuggestions = searchResults.where((element) {
       final result = element;
       final input = query;
