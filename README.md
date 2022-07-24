@@ -1,6 +1,6 @@
 # rickandmortyapp
 
-A Flutter project to consume data from https://rickandmortyapi.com.😎
+A Flutter project to consume data from https://rickandmortyapi.com
 
 ## Getting Started
 
