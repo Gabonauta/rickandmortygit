@@ -1,8 +1,21 @@
 # rickandmortyapp
 
 A Flutter project to consume data from https://rickandmortyapi.com
+## Tecnologies
+  - Flutter 3.0.5
+  - Windows 10
+  - VsCode 1.69.2
+  - This app is testing on a Android Emulator Device( Device: Pixel XL, SO: R)
+  for more detalis heres a pick from flutter doctor
+  ![image](https://user-images.githubusercontent.com/30781044/180667681-09b13505-d816-4d26-8fd3-8401649c64af.png)
+  
+## How to run the project
+  - Install the before tecnologies or compatible
+  - Open the project on Visual Studio Code
+  - type >Flutter run on terminal
+  
+## How it look
 
-## Getting Started
 
 This project make us able to search characters from Rick and Morty Tv show.
 - Feature ***Show Characters***
@@ -22,7 +35,11 @@ This project make us able to search characters from Rick and Morty Tv show.
 
   - Display all the information of one character
   
- 
+ ## What next?
+ - Implement pagination on search characters
+ - Add locations sceen
+ - Add episodes screen
+  
 
 A few resources to get you started if this is your first Flutter project:
 
