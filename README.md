@@ -10,9 +10,11 @@ This project make us able to search characters from Rick and Morty Tv show.
 ![Screenshot_1658699512](https://user-images.githubusercontent.com/30781044/180667269-45f38953-aa61-40d0-9c84-a633b3f92d64.png)
 
   - List in a grid view with infinite scroll cards with the main info of Rick and Mory characters
+  
+  
 ***Search Characters***
    ![Screenshot_1658699629](https://user-images.githubusercontent.com/30781044/180667313-cd9401a1-f2fb-430b-9b56-d2790e55f4d1.png)  
-characters
+  
   - Tap a letter and get a listview of characters suggestions.
   - Tap a suggestion to display all it information. 
   
