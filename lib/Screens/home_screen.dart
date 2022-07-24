@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rickandmortyapp/Servicios/characters_service.dart';
 import '../Widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,6 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final charactersService = Provider.of<CharactersService>(context);
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff146356),
