@@ -42,7 +42,7 @@ This project make us able to search characters from Rick and Morty Tv show.
  - Add locations sceen
  - Add episodes screen
   
-
+## A little help?
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
