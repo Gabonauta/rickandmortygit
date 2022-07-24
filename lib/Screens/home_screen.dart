@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final charactersService = Provider.of<CharactersService>(context);
+
     if (charactersService.isLoading) return const LoadingScreen();
     return Scaffold(
         appBar: AppBar(

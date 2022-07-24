@@ -52,7 +52,8 @@ class _CardTableState extends State<CardTable> {
           //end color state
           return GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, "character");
+              Navigator.pushNamed(context, "character",
+                  arguments: charactersService.charactersMap[index]);
             },
             child: _SigleCard(
                 image: charactersService.charactersMap[index].image,
@@ -147,7 +148,7 @@ class _BackgroundCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: const Color(0xffFFF1BD),
+          color: const Color(0xffFFF1BD).withOpacity(0.7),
           borderRadius: BorderRadius.circular(20)),
       child: widget,
     );
