@@ -5,20 +5,19 @@ A Flutter project to consume data from https://rickandmortyapi.com.😎
 ## Getting Started
 
 This project make us able to search characters from Rick and Morty Tv show.
-- Features
-***Show Characters***
+- Feature ***Show Characters***
 ![Screenshot_1658699512](https://user-images.githubusercontent.com/30781044/180667269-45f38953-aa61-40d0-9c84-a633b3f92d64.png)
 
   - List in a grid view with infinite scroll cards with the main info of Rick and Mory characters
   
   
-***Search Characters***
+-Feature ***Search Characters***
    ![Screenshot_1658699629](https://user-images.githubusercontent.com/30781044/180667313-cd9401a1-f2fb-430b-9b56-d2790e55f4d1.png)  
   
   - Tap a letter and get a listview of characters suggestions.
   - Tap a suggestion to display all it information. 
   
- ***Show Character Information***
+ -Feature ***Show Character Information***
  ![Screenshot_1658699610](https://user-images.githubusercontent.com/30781044/180667412-50bd1df3-2732-47f3-a699-fb942259af65.png)
 
   - Display all the information of one character
