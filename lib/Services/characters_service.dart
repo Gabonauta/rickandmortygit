@@ -21,7 +21,7 @@ class CharactersService extends ChangeNotifier {
     _page++;
     isLoading = true;
     notifyListeners();
-    final url = Uri.https(_baseUrl, "/api/character/", {'page': "$_page"});
+    final url = Uri.https(_baseUrl, "/api/character", {'page': '$_page'});
     final resp = await http.get(url);
     final Map<String, dynamic> alldata = json.decode(resp.body);
     allcharacters.addAll(
