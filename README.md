@@ -41,7 +41,12 @@ This project make us able to search characters from Rick and Morty Tv show.
  - Implement pagination on search characters
  - Add locations sceen
  - Add episodes screen
- ## Bug
+ - Load local data to avoid unnecessary requests on search caracter
+ - internet conection validation
+ - Paginator ui and functions
+
+
+## Bug
  - Fail fetching new caracters, wrong request fail on int convert - Solved: Implement dio insted http.  
   
 ## A little help?
