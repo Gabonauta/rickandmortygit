@@ -111,8 +111,7 @@ class _SigleCard extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
           children: [
             Icon(
               Icons.circle,
@@ -121,7 +120,7 @@ class _SigleCard extends StatelessWidget {
             const SizedBox(width: 5),
             Text(
               description,
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18, overflow: TextOverflow.clip),
             ),
             const SizedBox(width: 5),
             const Text(
@@ -131,7 +130,7 @@ class _SigleCard extends StatelessWidget {
             const SizedBox(width: 5),
             Text(
               species,
-              style: const TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18, overflow: TextOverflow.ellipsis),
             ),
           ],
         )

@@ -4,9 +4,14 @@ import 'package:rickandmortyapp/Screens/loading_screen.dart';
 import '../Services/services.dart';
 import '../Widgets/widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final charactersService = Provider.of<CharactersService>(context);
