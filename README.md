@@ -6,7 +6,7 @@ A Flutter project to consume data from https://rickandmortyapi.com
   - Windows 10 or compatible
   - VsCode 1.69.2 or compatible
   - Android Emulator Device( Device: Pixel XL, SO: R) or compatible
-  for more detalis heres a pick from flutter doctor
+  - Minimun on flutter doctor
   ![image](https://user-images.githubusercontent.com/30781044/180667681-09b13505-d816-4d26-8fd3-8401649c64af.png)
   
 ## How to run the project
