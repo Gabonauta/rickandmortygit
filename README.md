@@ -42,7 +42,7 @@ This project make us able to search characters from Rick and Morty Tv show.
  - Add locations sceen
  - Add episodes screen
  ## Bug
- - Implement dio insted http.  
+ - Fail fetching new caracters, wrong request fail on int convert - Solved: Implement dio insted http.  
   
 ## A little help?
 A few resources to get you started if this is your first Flutter project:
