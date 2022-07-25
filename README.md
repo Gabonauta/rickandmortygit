@@ -41,6 +41,8 @@ This project make us able to search characters from Rick and Morty Tv show.
  - Implement pagination on search characters
  - Add locations sceen
  - Add episodes screen
+ ## Bug
+ - Implement dio insted http.  
   
 ## A little help?
 A few resources to get you started if this is your first Flutter project:
